@@ -13,4 +13,5 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.preloader.hide();
   }
+  //Test
 }
