@@ -1,220 +1,324 @@
 <page-header></page-header>
 
 <div fxLayout="row wrap" class="matero-row">
-  <div fxFlex="100" class="matero-col">
+  <div fxFlex.lt-sm="100" class="matero-col">
     <mat-card>
-      <mat-card-title>Form Inline</mat-card-title>
-
-      <form>
-        <mat-form-field class="m-r-8">
-          <input matInput placeholder="Username" [(ngModel)]="q.username" name="username">
-        </mat-form-field>
-
-        <mat-form-field class="m-r-8">
-          <input matInput placeholder="Email" [(ngModel)]="q.email" name="email">
-        </mat-form-field>
-
-        <mat-form-field class="m-r-8">
-          <mat-label>Gender</mat-label>
-          <mat-select [(ngModel)]="q.gender" name="gender">
-            <mat-option>-- None --</mat-option>
-            <mat-option value="1">male</mat-option>
-            <mat-option value="2">female</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary">Search</button>
-      </form>
-
-    </mat-card>
-  </div>
-  <div fxFlex="33.33" fxFlex.lt-sm="100" class="matero-col">
-    <mat-card>
-      <mat-card-title>Form Horizontal</mat-card-title>
-
-      <form [formGroup]="reactiveForm1" class="form-field-full">
-        <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input matInput placeholder="Simple placeholder" formControlName="username" required>
-          <mat-error *ngIf="reactiveForm1.get('username').invalid">
-            {{'validations.required' | translate}}
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Gender</mat-label>
-          <mat-select required formControlName="gender" required>
-            <mat-option>-- None --</mat-option>
-            <mat-option value="1">male</mat-option>
-            <mat-option value="2">female</mat-option>
-          </mat-select>
-          <mat-error *ngIf="reactiveForm1.get('gender').invalid">
-            {{'validations.required' | translate}}
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Mobile</mat-label>
-          <input matInput placeholder="Simple placeholder" type="number" formControlName="mobile"
-                 required>
-          <mat-icon matSuffix>smartphone</mat-icon>
-          <mat-error *ngIf="reactiveForm1.get('mobile').invalid">
-            {{'validations.required' | translate}}
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Simple placeholder" formControlName="email" required>
-          <mat-error *ngIf="reactiveForm1.get('email').invalid">
-            {{getErrorMessage(reactiveForm1) | translate}}
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>City</mat-label>
-          <input matInput placeholder="Simple placeholder" formControlName="city">
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput placeholder="Simple placeholder" formControlName="address">
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Company</mat-label>
-          <input matInput placeholder="Simple placeholder" formControlName="company">
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Tele</mat-label>
-          <input matInput placeholder="Simple placeholder" type="number" formControlName="tele">
-          <mat-icon matSuffix>phone</mat-icon>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Website</mat-label>
-          <input matInput placeholder="Simple placeholder" formControlName="website">
-        </mat-form-field>
-
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date"
-                 formControlName="date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" class="m-t-8">Save</button>
-      </form>
-
-    </mat-card>
-  </div>
-
-  <div fxFlex="66.67" fxFlex.lt-sm="100" class="matero-col">
-    <mat-card>
-      <mat-card-title>Form Horizontal</mat-card-title>
-
       <form [formGroup]="reactiveForm2" class="form-field-full">
         <div fxLayout="row wrap" fxLayoutGap="8px grid">
-
-          <div fxFlex="50" fxFlex.lt-sm="100">
+          <div fxFlex="25" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Username</mat-label>
-              <input matInput placeholder="Simple placeholder" formControlName="username"
-                     required>
-              <mat-error *ngIf="reactiveForm2.get('username').invalid">
-                {{'validations.required' | translate}}
-              </mat-error>
-            </mat-form-field>
-          </div>
-
-          <div fxFlex="50" fxFlex.lt-sm="100">
-            <mat-form-field>
-              <mat-label>Gender</mat-label>
+              <mat-label>Transport Mode</mat-label>
               <mat-select required formControlName="gender" required>
-                <mat-option>-- None --</mat-option>
-                <mat-option value="1">male</mat-option>
-                <mat-option value="2">female</mat-option>
+                <mat-option value="1">Air</mat-option>
               </mat-select>
               <mat-error *ngIf="reactiveForm2.get('gender').invalid">
                 {{'validations.required' | translate}}
               </mat-error>
             </mat-form-field>
           </div>
-
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Transaction</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option>-- None --</mat-option>
+                <mat-option value="1">Export</mat-option>
+                <mat-option value="2">Import</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Courier Mode</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option>-- None --</mat-option>
+                <mat-option value="1">IEC - International Economy</mat-option>
+                <mat-option value="2">IEX - International Express</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Content Type</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option>-- None --</mat-option>
+                <mat-option value="1">DOX - Documents</mat-option>
+                <mat-option value="2">NDX - Non Documents</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
           <div fxFlex="50" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Mobile</mat-label>
-              <input matInput placeholder="Simple placeholder" type="number"
-                     formControlName="mobile" required>
-              <mat-icon matSuffix>smartphone</mat-icon>
+              <mat-label>Shipper Name</mat-label>
+              <input matInput placeholder="Shipper Name" formControlName="mobile" required>
               <mat-error *ngIf="reactiveForm2.get('mobile').invalid">
                 {{'validations.required' | translate}}
               </mat-error>
             </mat-form-field>
           </div>
-
           <div fxFlex="50" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Simple placeholder" formControlName="email" required>
+              <mat-label>Receiver Name</mat-label>
+              <input matInput placeholder="Receiver Name" formControlName="email" required>
               <mat-error *ngIf="reactiveForm2.get('email').invalid">
                 {{getErrorMessage(reactiveForm2) | translate}}
               </mat-error>
             </mat-form-field>
           </div>
-
           <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Address Line 1</mat-label>
+              <input matInput placeholder="Shipper Address" required>
+              <mat-error *ngIf="reactiveForm2.get('mobile').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Address Line 1</mat-label>
+              <input matInput placeholder="Receiver Address" required>
+              <mat-error *ngIf="reactiveForm2.get('email').invalid">
+                {{getErrorMessage(reactiveForm2) | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Address Line 2</mat-label>
+              <input matInput placeholder="Shipper Address">
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Address Line 2</mat-label>
+              <input matInput placeholder="Receiver Address">
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Address Line 3</mat-label>
+              <input matInput placeholder="Shipper Address">
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Address Line 3</mat-label>
+              <input matInput placeholder="Receiver Address">
+            </mat-form-field>
+          </div>
+          <div fxFlex="15" fxFlex.lt-sm="100">
             <mat-form-field>
               <mat-label>City</mat-label>
               <input matInput placeholder="Simple placeholder" formControlName="city">
             </mat-form-field>
           </div>
-
-          <div fxFlex="50" fxFlex.lt-sm="100">
+          <div fxFlex="20" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Address</mat-label>
-              <input matInput placeholder="Simple placeholder" formControlName="address">
+              <mat-label>Pin Code</mat-label>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
             </mat-form-field>
           </div>
-
-          <div fxFlex="50" fxFlex.lt-sm="100">
+          <div fxFlex="15" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Company</mat-label>
-              <input matInput placeholder="Simple placeholder" formControlName="company">
+              <mat-label>Trader Type</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option value="1">Business</mat-option>
+                <mat-option value="2">Private</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
             </mat-form-field>
           </div>
-
-          <div fxFlex="50" fxFlex.lt-sm="100">
+          <div fxFlex="15" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Tele</mat-label>
-              <input matInput placeholder="Simple placeholder" type="number" formControlName="tele">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
+            </mat-form-field>
+          </div>
+          <div fxFlex="20" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Pin Code</mat-label>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
+            </mat-form-field>
+          </div>
+          <div fxFlex="15" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Trader Type</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option value="1">Business</mat-option>
+                <mat-option value="2">Private</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Phone</mat-label>
+              <mat-icon matSuffix>phone</mat-icon>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
+            </mat-form-field>
+          </div>
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+          </div>
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Phone</mat-label>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
               <mat-icon matSuffix>phone</mat-icon>
             </mat-form-field>
           </div>
-
-          <div fxFlex="50" fxFlex.lt-sm="100">
+          <div fxFlex="25" fxFlex.lt-sm="100">
             <mat-form-field>
-              <mat-label>Website</mat-label>
-              <input matInput placeholder="Simple placeholder" formControlName="website">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Simple placeholder" formControlName="city">
+              <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
           </div>
-
           <div fxFlex="50" fxFlex.lt-sm="100">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker2" placeholder="Choose a date"
+              <mat-label>Content Description</mat-label>
+              <input matInput placeholder="Describe your contents here..">
+            </mat-form-field>
+          </div>
+          <div fxFlex="25" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" placeholder="Goods pick up date"
                      formControlName="date">
               <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
           </div>
-
         </div>
-
+        <div fxLayout="row wrap" fxLayoutGap="8px grid">
+          <div fxFlex="20" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <input matInput placeholder="Item Description">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>HSN</mat-label>
+              <input matInput placeholder="HSN">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Weight</mat-label>
+              <input matInput placeholder="Weight">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+            <mat-label>Qty</mat-label>
+              <input matInput placeholder="Qty">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Unit Price</mat-label>
+              <input matInput placeholder="Unit Price">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Sub Total</mat-label>
+              <input matInput placeholder="Sub Total">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Currency</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option value="1">INR</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="20" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>KYC</mat-label>
+              <input matInput placeholder="KYC Documents">
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="8px grid">
+          <div fxFlex="20" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <input matInput placeholder="Item Description">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>HSN</mat-label>
+              <input matInput placeholder="HSN">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Weight</mat-label>
+              <input matInput placeholder="Weight">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+            <mat-label>Qty</mat-label>
+              <input matInput placeholder="Qty">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Unit Price</mat-label>
+              <input matInput placeholder="Unit Price">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Sub Total</mat-label>
+              <input matInput placeholder="Sub Total">
+            </mat-form-field>
+          </div>
+          <div fxFlex="10" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Currency</mat-label>
+              <mat-select required formControlName="gender" required>
+                <mat-option value="1">INR</mat-option>
+              </mat-select>
+              <mat-error *ngIf="reactiveForm2.get('gender').invalid">
+                {{'validations.required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="20" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>KYC</mat-label>
+              <input matInput placeholder="KYC Documents">
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button color="green" class="m-t-8">Add Another Item</button>
         <button mat-raised-button color="primary" class="m-t-8">Save</button>
       </form>
-
     </mat-card>
   </div>
-
 </div>
