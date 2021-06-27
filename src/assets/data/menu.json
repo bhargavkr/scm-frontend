@@ -10,26 +10,31 @@
       }
     },
     {
-      "route": "sessions",
-      "name": "sessions",
+      "route": "operations",
+      "name": "operations",
       "type": "sub",
-      "icon": "question_answer",
+      "icon": "dashboard",
       "children": [{
-          "route": "403",
-          "name": "403",
-          "type": "link"
-        },
-        {
-          "route": "404",
-          "name": "404",
-          "type": "link"
-        },
-        {
-          "route": "500",
-          "name": "500",
-          "type": "link"
-        }
-      ]
+        "route": "way-bill",
+        "name": "way-bill",
+        "type": "link"
+      },
+      {
+        "route": "404",
+        "name": "proforma-invoice",
+        "type": "link"
+      },
+      {
+        "route": "404",
+        "name": "manifest",
+        "type": "link"
+      },
+      {
+        "route": "404",
+        "name": "tracking",
+        "type": "link"
+      }
+    ]
     }
   ]
 }

@@ -74,7 +74,12 @@
     "menu-level.level-1-1.level-2-1.level-3-1": "Level 3.1",
     "menu-level.level-1-1.level-2-1.level-3-1.level-4-1": "Level 4.1",
     "permissions": "Permissions",
-    "permissions.test": "Permission Test"
+    "permissions.test": "Permission Test",
+    "operations": "Operations",
+    "operations.way-bill": "Way Bill",
+    "operations.proforma-invoice": "Proforma Invoice",
+    "operations.manifest": "Manifest",
+    "operations.tracking": "Tracking"
   },
   "validations": {
     "required": "This field is required",
