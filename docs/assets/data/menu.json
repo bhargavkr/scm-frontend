@@ -1,0 +1,40 @@
+{
+  "menu": [{
+      "route": "dashboard",
+      "name": "dashboard",
+      "type": "link",
+      "icon": "dashboard",
+      "badge": {
+        "color": "red-500",
+        "value": "5"
+      }
+    },
+    {
+      "route": "operations",
+      "name": "operations",
+      "type": "sub",
+      "icon": "dashboard",
+      "children": [{
+        "route": "way-bill",
+        "name": "way-bill",
+        "type": "link"
+      },
+      {
+        "route": "404",
+        "name": "proforma-invoice",
+        "type": "link"
+      },
+      {
+        "route": "404",
+        "name": "manifest",
+        "type": "link"
+      },
+      {
+        "route": "404",
+        "name": "tracking",
+        "type": "link"
+      }
+    ]
+    }
+  ]
+}
